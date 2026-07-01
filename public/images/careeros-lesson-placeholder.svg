@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">CareerOS lesson workspace</title>
+  <desc id="desc">Abstract dashboard panels representing a structured learning workspace.</desc>
+  <rect width="1200" height="520" fill="#f7f7f8"/>
+  <rect x="72" y="72" width="1056" height="376" rx="16" fill="#ffffff" stroke="#d4d4d8"/>
+  <rect x="112" y="112" width="240" height="296" rx="10" fill="#fafafa" stroke="#e4e4e7"/>
+  <rect x="392" y="112" width="696" height="56" rx="10" fill="#18181b"/>
+  <rect x="392" y="200" width="320" height="208" rx="10" fill="#fafafa" stroke="#e4e4e7"/>
+  <rect x="744" y="200" width="344" height="88" rx="10" fill="#fafafa" stroke="#e4e4e7"/>
+  <rect x="744" y="320" width="344" height="88" rx="10" fill="#fafafa" stroke="#e4e4e7"/>
+  <circle cx="160" cy="152" r="20" fill="#18181b"/>
+  <rect x="196" y="140" width="104" height="12" rx="6" fill="#a1a1aa"/>
+  <rect x="196" y="164" width="80" height="10" rx="5" fill="#d4d4d8"/>
+  <rect x="432" y="132" width="280" height="14" rx="7" fill="#ffffff"/>
+  <rect x="432" y="244" width="220" height="12" rx="6" fill="#71717a"/>
+  <rect x="432" y="280" width="176" height="12" rx="6" fill="#a1a1aa"/>
+  <rect x="784" y="232" width="220" height="12" rx="6" fill="#71717a"/>
+  <rect x="784" y="352" width="188" height="12" rx="6" fill="#71717a"/>
+</svg>

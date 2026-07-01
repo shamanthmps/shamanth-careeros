@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --sidebar: 0 0% 98%;
+    --sidebar-foreground: 240 10% 3.9%;
+    --sidebar-border: 240 5.9% 90%;
+    --sidebar-active: 240 4.8% 95.9%;
+    --sidebar-active-foreground: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --sidebar: 240 10% 3.9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-active: 240 3.7% 15.9%;
+    --sidebar-active-foreground: 0 0% 98%;
+  }
+}
+
+@layer components {
+  .career-markdown {
+    @apply rounded-lg border bg-card p-5 text-card-foreground shadow-sm;
+  }
+
+  .career-markdown h1 {
+    @apply mb-5 text-3xl font-semibold tracking-normal;
+  }
+
+  .career-markdown h2 {
+    @apply mb-3 mt-9 border-b pb-2 text-xl font-semibold tracking-normal;
+  }
+
+  .career-markdown h3 {
+    @apply mb-2 mt-6 text-base font-semibold tracking-normal;
+  }
+
+  .career-markdown p {
+    @apply my-4 text-sm leading-7 text-foreground;
+  }
+
+  .career-markdown a {
+    @apply font-medium text-primary underline underline-offset-4;
+  }
+
+  .career-markdown ul,
+  .career-markdown ol {
+    @apply my-4 space-y-2 pl-6 text-sm leading-7;
+  }
+
+  .career-markdown ul {
+    @apply list-disc;
+  }
+
+  .career-markdown ol {
+    @apply list-decimal;
+  }
+
+  .career-markdown li:has(input[type="checkbox"]) {
+    @apply list-none;
+  }
+
+  .career-markdown input[type="checkbox"] {
+    @apply mr-2 align-middle;
+  }
+
+  .career-markdown blockquote {
+    @apply my-5 border-l-4 border-border pl-4 text-sm italic text-muted-foreground;
+  }
+
+  .career-markdown table {
+    @apply my-5 w-full overflow-hidden rounded-md border text-sm;
+  }
+
+  .career-markdown th {
+    @apply border bg-muted px-3 py-2 text-left font-semibold;
+  }
+
+  .career-markdown td {
+    @apply border px-3 py-2 align-top;
+  }
+
+  .career-markdown code:not(pre code) {
+    @apply rounded bg-muted px-1.5 py-0.5 text-xs font-medium;
+  }
+
+  .career-markdown pre {
+    @apply my-5 overflow-x-auto rounded-lg border bg-zinc-950 p-4 text-sm text-zinc-50;
+  }
+
+  .career-markdown img {
+    @apply my-6 w-full;
+  }
+
+  .career-markdown hr {
+    @apply my-8 border-border;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    min-width: 320px;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
