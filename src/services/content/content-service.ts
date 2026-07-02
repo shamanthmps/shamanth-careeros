@@ -35,6 +35,7 @@ export const contentService: ContentService = {
 function getContentModules() {
   const lessons = Object.entries(markdownFiles)
     .map(([filePath, rawMarkdown]) => parseLessonFile(filePath, String(rawMarkdown)))
+    .filter((lesson): lesson is ContentLesson => Boolean(lesson))
     .filter((lesson) => lesson.frontmatter.status === "published")
     .sort((left, right) => left.frontmatter.order - right.frontmatter.order);
 
@@ -60,26 +61,35 @@ function getContentModules() {
     .sort((left, right) => left.title.localeCompare(right.title));
 }
 
-function parseLessonFile(filePath: string, rawMarkdown: string): ContentLesson {
-  const frontmatterMatch = /^---\n(?<yaml>[\s\S]*?)\n---\n?(?<markdown>[\s\S]*)$/u.exec(
-    rawMarkdown
-  );
-
-  if (!frontmatterMatch?.groups) {
-    throw new Error(`Missing YAML front matter in ${filePath}.`);
+function parseLessonFile(filePath: string, rawMarkdown: string): ContentLesson | undefined {
+  if (isDocumentationFile(filePath)) {
+    return undefined;
   }
 
-  const frontmatter = validateFrontmatter(parse(frontmatterMatch.groups.yaml), filePath);
-  const markdown = frontmatterMatch.groups.markdown.trim();
-  const moduleSlug = getModuleSlug(filePath);
+  try {
+    const frontmatterMatch = /^---\r?\n(?<yaml>[\s\S]*?)\r?\n---\r?\n?(?<markdown>[\s\S]*)$/u.exec(
+      rawMarkdown
+    );
 
-  return {
-    slug: frontmatter.id,
-    moduleSlug,
-    frontmatter,
-    markdown,
-    headings: extractHeadings(markdown)
-  };
+    if (!frontmatterMatch?.groups) {
+      throw new Error("Missing YAML front matter.");
+    }
+
+    const frontmatter = validateFrontmatter(parse(frontmatterMatch.groups.yaml), filePath);
+    const markdown = frontmatterMatch.groups.markdown.trim();
+    const moduleSlug = getModuleSlug(filePath);
+
+    return {
+      slug: frontmatter.id,
+      moduleSlug,
+      frontmatter,
+      markdown,
+      headings: extractHeadings(markdown)
+    };
+  } catch (error) {
+    warnInvalidLesson(filePath, error);
+    return undefined;
+  }
 }
 
 function validateFrontmatter(value: unknown, filePath: string): LessonFrontmatter {
@@ -151,6 +161,20 @@ function getModuleSlug(filePath: string) {
   const normalizedPath = filePath.replaceAll("\\", "/");
   const segments = normalizedPath.split("/");
   return segments.at(-2) ?? "uncategorized";
+}
+
+function isDocumentationFile(filePath: string) {
+  const fileName = filePath.replaceAll("\\", "/").split("/").at(-1)?.toLowerCase();
+  return fileName === "index.md" || fileName === "readme.md";
+}
+
+function warnInvalidLesson(filePath: string, error: unknown) {
+  if (!import.meta.env.DEV) {
+    return;
+  }
+
+  const reason = error instanceof Error ? error.message : "Unknown content parsing error.";
+  console.warn(`[CareerOS content] Skipping invalid lesson file: ${filePath}. ${reason}`);
 }
 
 function slugify(value: string) {
