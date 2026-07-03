@@ -1,10 +1,10 @@
 ---
 id: technical-program-management-001
 module: Technical Program Management
-title: What is a Technical Program Manager?
-difficulty: Beginner
+title: What Is a Technical Program Manager?
+difficulty: introductory
 estimatedTime: 25
-interviewFrequency: Very High
+interviewFrequency: high
 order: 1
 tags:
   - technical-program-management

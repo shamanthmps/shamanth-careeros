@@ -120,6 +120,41 @@ function validateFrontmatter(value: unknown, filePath: string): LessonFrontmatte
     throw new Error(`Invalid tags metadata in ${filePath}.`);
   }
 
+  const allowedDifficulty: LessonFrontmatter["difficulty"][] = [
+    "introductory",
+    "intermediate",
+    "advanced",
+    "expert"
+  ];
+  const allowedInterviewFrequency: LessonFrontmatter["interviewFrequency"][] = [
+    "low",
+    "medium",
+    "high"
+  ];
+  const allowedStatus: LessonFrontmatter["status"][] = ["draft", "published", "archived"];
+
+  if (!allowedDifficulty.includes(value.difficulty as LessonFrontmatter["difficulty"])) {
+    throw new Error(
+      `Invalid difficulty value in ${filePath}. Expected one of: ${allowedDifficulty.join(", ")}.`
+    );
+  }
+
+  if (
+    !allowedInterviewFrequency.includes(
+      value.interviewFrequency as LessonFrontmatter["interviewFrequency"]
+    )
+  ) {
+    throw new Error(
+      `Invalid interviewFrequency value in ${filePath}. Expected one of: ${allowedInterviewFrequency.join(", ")}.`
+    );
+  }
+
+  if (!allowedStatus.includes(value.status as LessonFrontmatter["status"])) {
+    throw new Error(
+      `Invalid status value in ${filePath}. Expected one of: ${allowedStatus.join(", ")}.`
+    );
+  }
+
   const id = value.id as string;
   const module = value.module as string;
   const title = value.title as string;
