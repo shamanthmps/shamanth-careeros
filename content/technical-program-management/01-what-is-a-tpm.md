@@ -1,19 +1,3 @@
----
-id: technical-program-management-001
-module: Technical Program Management
-title: What Is a Technical Program Manager?
-difficulty: introductory
-estimatedTime: 25
-interviewFrequency: high
-order: 1
-tags:
-  - technical-program-management
-  - fundamentals
-  - leadership
-status: published
-version: 1.0
----
-
 # Executive Summary
 
 A Technical Program Manager (TPM) is a technical leader responsible for driving complex, cross-functional initiatives from concept to successful delivery. Unlike a Project Manager who primarily coordinates schedules, or a Product Manager who defines what should be built, a TPM owns **how large technical programs are executed successfully across multiple engineering teams**.
