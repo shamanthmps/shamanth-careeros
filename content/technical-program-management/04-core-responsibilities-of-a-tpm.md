@@ -1,19 +1,3 @@
----
-id: technical-program-management-004
-module: Technical Program Management
-title: Core Responsibilities of a Technical Program Manager
-difficulty: introductory
-estimatedTime: 35
-interviewFrequency: very-high
-order: 4
-tags:
-  - technical-program-management
-  - execution
-  - leadership
-status: published
-version: 1.0
----
-
 # Executive Summary
 
 Technical Program Managers are responsible for transforming ambitious technical strategies into predictable business outcomes. They do this by aligning people, technology, priorities, and execution across multiple teams.

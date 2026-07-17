@@ -1,19 +1,3 @@
----
-id: technical-program-management-006
-module: Technical Program Management
-title: Program Lifecycle
-difficulty: intermediate
-estimatedTime: 45
-interviewFrequency: very-high
-order: 6
-tags:
-  - technical-program-management
-  - execution
-  - program-management
-status: published
-version: 1.0
----
-
 # Executive Summary
 
 Every successful technical program follows a lifecycle. Regardless of whether you're launching a new AI platform, migrating to the cloud, modernizing an engineering platform, or building a global payments system, the work progresses through a series of predictable phases.

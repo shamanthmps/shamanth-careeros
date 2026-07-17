@@ -1,19 +1,3 @@
----
-id: technical-program-management-005
-module: Technical Program Management
-title: TPM Competency Framework
-difficulty: intermediate
-estimatedTime: 40
-interviewFrequency: very-high
-order: 5
-tags:
-  - technical-program-management
-  - leadership
-  - career-growth
-status: published
-version: 1.0
----
-
 # Executive Summary
 
 Exceptional Technical Program Managers are not defined by a single skill. They succeed by combining technical credibility, execution excellence, business understanding, and leadership into a well-rounded competency profile.

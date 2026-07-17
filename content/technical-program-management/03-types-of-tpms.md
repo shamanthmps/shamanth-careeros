@@ -1,19 +1,3 @@
----
-id: technical-program-management-003
-module: Technical Program Management
-title: Types of Technical Program Managers
-difficulty: introductory
-estimatedTime: 25
-interviewFrequency: high
-order: 3
-tags:
-  - technical-program-management
-  - career
-  - specialization
-status: published
-version: 1.0
----
-
 # Executive Summary
 
 Technical Program Management is not a single career path. As organizations scale, TPMs specialize in different domains based on business needs, technology complexity, and organizational structure.
