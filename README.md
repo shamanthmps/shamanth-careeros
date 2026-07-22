@@ -120,7 +120,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CON
 
 ## Roadmap
 
-The current roadmap is documented in [ROADMAP.md](ROADMAP.md). The main priority before v1.0 is content quality and release maturity, not expanding the product surface area.
+The current roadmap is documented in [ROADMAP.md](ROADMAP.md). The main priority before v1.0 is content quality and release maturity, not expanding the product surface area
 
 ## License
 
